@@ -1,0 +1,9 @@
+.input_search {
+  width: 100%;
+  max-width: 450px;
+}
+
+.btn-submit {
+  background-color: #82d8d8 !important;
+  color: white;
+}

@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-12">
+    <div class="input-group">
+      <div class="mx-auto input_search" style="position: relative">
+        <div>
+          <input type="text" class="form-control" />
+        </div>
+        <div style="position: absolute; right: 14px; top: 8px">
+          <i class="icon-search"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my-5">
+  <!-- <div class="col-12">cards</div> -->
+  <div class="mt-2 col-12 col-md-6 col-lg-4" *ngFor="let image of images">
+    <div class="card" style="width: 18rem; position: relative">
+      <img
+        src="https://images.assetsdelivery.com/compings_v2/devidgrutz/devidgrutz1901/devidgrutz190100013.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div style="position: absolute; right: 10px; top: 20px">
+        <button
+          type="button"
+          class="btn btn-info"
+          style="background-color: #82d8d8 !important"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="!facultades" class="col-12 loading"> -->
+  <!-- <div class="loader" style="margin: auto; margin: 100px auto"></div> -->
+  <!-- </div> -->
+</div>
+<div class="row">
+  <div class="input-group">
+    <div class="mx-auto">
+      <input
+        type="button"
+        class="btn"
+        value="Cargar más"
+        style="background-color: #82d8d8 !important; color: white"
+      />
+    </div>
+  </div>
+</div>
