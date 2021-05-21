@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/common/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { SaveImagesComponent } from './components/save-images/save-images.component';
 import { NotfoundComponent } from './components/common/notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { NotfoundComponent } from './components/common/notfound/notfound.compone
     HeaderComponent,
     HomeComponent,
     SaveImagesComponent,
-    NotfoundComponent
+    NotfoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
