@@ -12,6 +12,16 @@
     </div>
   </div>
 </div>
+
+<div class="my-2 alert alert-success alert-dismissible" role="alert" *ngIf="msg_success">
+  {{msg_success}}
+  <button type="button" class="btn-close" (click)="reset_msg_success()"></button>
+</div>
+<div class="my-2 alert alert-warning alert-dismissible" role="alert" *ngIf="msg_dup_url">
+  {{msg_dup_url}}
+  <button type="button" class="btn-close" (click)="reset_msg_dup_url()"></button>
+</div>
+
 <div class="row my-5" *ngIf="resUnsplash">
   <!-- <div class="col-12">cards</div> -->
   <div class="mt-2 col-12 col-md-6 col-lg-4" *ngFor="let image of resUnsplash">

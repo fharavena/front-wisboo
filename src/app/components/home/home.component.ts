@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
 
   query: String = "";
   pagina = 1;
+  msg_success: string = "";
+  msg_dup_url: string = "";
 
   constructor(private imageService: ImageService) { }
 
@@ -32,19 +34,29 @@ export class HomeComponent implements OnInit {
   }
 
   buscar_unsplash(valor: String) {
+    this.msg_success = "";
+    this.msg_dup_url = "";
     this.pagina = 1;
     this.resUnsplash = undefined;
     this.getQueryImages(valor);
   }
 
   guardar(url: String) {
-    this.imageService.save_image(url).subscribe((response: any) => {
-      if (response) {
-        // console.log("ok");
-      } else {
-        console.log("error");
-      }
-    })
+
+    this.imageService.save_image(url).subscribe(
+      (response: any) => {
+        if (response) {
+          this.msg_success = "Imagen guardada con exito";
+          this.msg_dup_url = ""
+        } else {
+          console.log("error");
+        }
+      },
+      err => {
+        this.msg_success = "";
+        this.msg_dup_url = "La url de la imagen ya existe en el registro"
+        console.log(err.error);
+      })
   }
 
   cargar_mas() {
@@ -58,4 +70,13 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  reset_msg_success() {
+    this.msg_success = "";
+  }
+
+  reset_msg_dup_url() {
+    this.msg_dup_url = ""
+  }
+
 }
