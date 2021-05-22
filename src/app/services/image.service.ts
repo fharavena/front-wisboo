@@ -7,14 +7,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ImageService {
-  constructor(public _http: HttpClient) {}
+  constructor(public _http: HttpClient) { }
 
-  public get_images_unsplash(query: String) {
+  public get_images_unsplash(query: String, pagina: Number) {
     var url =
-      global.url_stats + 'images/search?query=' + query + '&page=1&size=8';
+      global.url_stats + 'images/search?query=' + query + '&page=' + pagina + '&size=6';
+    return this._http.get(url);
+  }
 
-      console.log(url);
-      
+  public save_image(url: String): Observable<any> {
+    let headers = new HttpHeaders().set(
+      "Content-Type",
+      "application/json"
+    );
+    var params = { "url": url }
+
+    return this._http.post(global.url_stats + 'insert', params, { headers });
+  }
+
+  public get_images_favorite(pagina: Number) {
+    var url =
+      global.url_stats + 'favpage?page=' + pagina + '&size=6';
     return this._http.get(url);
   }
 }

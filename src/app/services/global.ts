@@ -1,3 +1,3 @@
 export var global = {
-  url_stats: 'localhost:8080/',
+  url_stats: 'http://localhost:8080/',
 };

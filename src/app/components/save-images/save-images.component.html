@@ -1,19 +1,21 @@
 <div class="row">
   <!-- <div class="col-12">cards</div> -->
-  <div
-    class="my-5 col-12 col-md-6 col-lg-3"
-    *ngFor="let image of images"
-  >
+  <div class="my-5 col-12 col-md-6 col-lg-4" *ngFor="let image of favoritas">
     <div class="card" style="width: 18rem">
-      <img
-        src="https://images.assetsdelivery.com/compings_v2/devidgrutz/devidgrutz1901/devidgrutz190100013.jpg"
-        class="card-img-top"
-        alt="..."
-      />
+      <img src="{{image.url}}" class="card-img-top" alt="..." />
     </div>
   </div>
 
-  <!-- <div *ngIf="!facultades" class="col-12 loading"> -->
-  <!-- <div class="loader" style="margin: auto; margin: 100px auto"></div> -->
-  <!-- </div> -->
+  <div *ngIf="!favoritas" class="col-12 loading">
+    <div class="loader" style="margin: auto; margin: 100px auto"></div>
+  </div>
+</div>
+
+<div class="row mb-5">
+  <div class="input-group">
+    <div class="mx-auto">
+      <input type="button" class="btn" value="Cargar más" style="background-color: #82d8d8 !important; color: white"
+        (click)="cargar_mas()" />
+    </div>
+  </div>
 </div>
